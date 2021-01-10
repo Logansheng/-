@@ -1,7 +1,7 @@
 let html = document.querySelector("#html");
 let style = document.querySelector("#style");
 let string = `
-/*你好，我是小峰
+/*你好，我是小峰呀
 * 接下来给你们展示下我的学习成果
 * 首先我准备一个div
 */
@@ -51,29 +51,27 @@ let string = `
  */
 `;
 
-
-let string2 = ""
+let string2 = "";
 let n = 0;
 
 let step = () => {
-  setTimeout(() =>{
-    if(string[n] === '\n'){
-      string2 += "<br>"
-    } else if (string[n] === ' '){
-      string2 += "&nbsp"
-    }else{
-      string2 +=string[n]
+  setTimeout(() => {
+    if (string[n] === "\n") {
+      string2 += "<br>";
+    } else if (string[n] === " ") {
+      string2 += "&nbsp";
+    } else {
+      string2 += string[n];
     }
     html.innerHTML = string2;
-    style.innerHTML = string.substring(0,n);
-    window.scrollTo(0,99999);
-    html.scrollTo(0,99999)
-    if(n < string.length - 1){
-    n += 1;  
-    step();
- 
+    style.innerHTML = string.substring(0, n);
+    window.scrollTo(0, 99999);
+    html.scrollTo(0, 99999);
+    if (n < string.length - 1) {
+      n += 1;
+      step();
     }
-  },50);
+  }, 50);
 };
 
 step();
